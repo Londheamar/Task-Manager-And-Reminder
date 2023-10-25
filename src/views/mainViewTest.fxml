@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ListView?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <!-- VBox for adding tasks -->
+        <VBox prefHeight="103.0" prefWidth="831.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="359.0" AnchorPane.topAnchor="10.0">
+           <Text layoutX="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New task" wrappingWidth="266.20654296875">
+	         <font>
+	            <Font size="20.0" name="Times New Roman" />
+	         </font>
+	      </Text>
+            <HBox spacing="10.0">
+                <!-- Text field for entering task title -->
+                <TextField fx:id="taskNameTextField" prefHeight="25.0" prefWidth="200.0" promptText="Enter Task Title" styleClass="new-task-task-input" />
+                
+                <!-- Date pickers for selecting start and end dates -->
+                <DatePicker fx:id="taskDatePickerStart" editable="false" prefHeight="25.0" prefWidth="200.0" promptText="Select start date" styleClass="new-task-date-picker" />
+                <DatePicker fx:id="taskDatePickerEnd" editable="false" prefHeight="25.0" prefWidth="200.0" promptText="Select end date" styleClass="new-task-date-picker" />
+                
+                <!-- ComboBox for selecting task priority -->
+                <ComboBox fx:id="priorityComboBox" prefHeight="25.0" prefWidth="150.0">
+                    <items>
+                        <!-- Priority options -->
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="High" />
+                            <String fx:value="Medium" />
+                            <String fx:value="Low" />
+                        </FXCollections>
+                    </items>
+                    <promptText>Priority</promptText>
+                </ComboBox>
+                
+            </HBox>
+            <VBox fx:id="extraFieldsContainer" managed="false" spacing="10.0" visible="false">
+            <HBox spacing="10.0">
+              <TextField fx:id="taskDescriptionTextField" prefHeight="25.0" prefWidth="200.0" promptText="Enter Task Description" styleClass="new-task-task-input" />
+              
+            
+            <ComboBox fx:id="statusComboBox" prefHeight="25.0" prefWidth="150.0">
+                    <items>
+                        <!-- Priority options -->
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="New" />
+                            <String fx:value="In-Progress" />
+                            <String fx:value="Completed" />
+                        </FXCollections>
+                    </items>
+                    <promptText>Status</promptText>
+                </ComboBox>
+                </HBox>
+            </VBox>
+            <HBox spacing="10.0">
+            <!-- Button to add a new task -->	
+                <Button onAction="#addTask" mnemonicParsing="false" styleClass="btn-success" text="Save and Schedule Task" />
+                <!-- Add one button here to display extra fields: more fields -->
+                <Button onAction="#toggleExtraFields" fx:id="showExtraFieldsBtn" styleClass="btn-warning" text="More Fields" />
+            <!-- Separator to visually separate the adding tasks section -->
+            </HBox>
+            <Separator prefHeight="46.0" prefWidth="831.0" />
+        </VBox>
+      <VBox layoutX="869.0" prefHeight="113.0" prefWidth="331.0">
+         <children>
+            <Text fill="#ff4800" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged User" wrappingWidth="302.9970703125" y="10.0">
+               <VBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" name="Times New Roman" />
+               </font>
+            </Text>
+            <Text fx:id="loggedUserName" strokeType="OUTSIDE" strokeWidth="0.0" text="Name : USER_NAME_HERE" wrappingWidth="303.9970703125">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+	            <Font size="16.0" name="Times New Roman" />
+	         </font>
+            </Text>
+            <Text fx:id="loggedUserEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : USER_EMAIL_HERE" wrappingWidth="302.9970703125" y="10.0">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+	            <Font size="16.0" name="Times New Roman" />
+	         </font>
+            </Text>
+            <Button onAction="#logoutHandler" styleClass="logoutBtn" fx:id="logoutBtn" mnemonicParsing="false" text="Logout" textFill="RED">
+               <VBox.margin>
+                  <Insets left="230.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+         </children></VBox>
+      <Text fx:id="textListAllTask" layoutX="10.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of all task" wrappingWidth="266.20654296875">
+         <font>
+            <Font size="20.0" name="Times New Roman" />
+         </font>
+      </Text>
+      <SplitPane fx:id="splitPaneShowList" dividerPositions="0.5" layoutY="150.0" prefHeight="387.0" prefWidth="499.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="145.0">
+    <items>
+        <!-- Left Side (50%) -->
+        <AnchorPane prefHeight="653.0" prefWidth="662.0">
+            <ListView fx:id="taskListView" layoutY="-3.0" prefHeight="385.0" prefWidth="246.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        </AnchorPane>
+        
+        <!-- Right Side (50%) -->
+        <AnchorPane>
+               <children>
+                  <TableView layoutX="62.0" layoutY="59.0" prefHeight="653.0" prefWidth="596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+       </AnchorPane>
+    </items>
+</SplitPane>
+      <Separator layoutX="856.0" layoutY="2.0" orientation="VERTICAL" prefHeight="113.0" prefWidth="1.0" />
+
+
+    </children>
+</AnchorPane>
+

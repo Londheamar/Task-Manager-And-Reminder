@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Register">
+   <children>
+      <Text fill="#ff4f04" layoutX="429.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up and Never Miss a Deadline Again">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="468.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fullName" layoutX="467.0" layoutY="190.0" prefHeight="34.0" prefWidth="266.0" promptText="Enter full name" styleClass="new-task-input" />
+      <Text layoutX="468.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email id.">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="emailId" layoutX="467.0" layoutY="259.0" prefHeight="34.0" prefWidth="266.0" promptText="Enter email id." styleClass="new-task-input" />
+      <TextField fx:id="regUsername" layoutX="467.0" layoutY="329.0" prefHeight="34.0" prefWidth="266.0" promptText="Enter username" styleClass="new-task-input" />
+      <Text layoutX="468.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="469.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="regPassword" layoutX="467.0" layoutY="393.0" prefHeight="34.0" prefWidth="266.0" promptText="Enter password" styleClass="new-task-input" />
+      
+      <Button fx:id="registerBtn" layoutX="467.0" layoutY="440.0" mnemonicParsing="false" onAction="#registerHandler" prefHeight="34.0" prefWidth="266.0" styleClass="btn-success" text="Register" textFill="#901010" textOverrun="CLIP" />
+      <Separator layoutX="500.0" layoutY="493.0" prefWidth="200.0" />
+      <Text layoutX="525.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account  ">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="469.0" layoutY="538.0" mnemonicParsing="false" onAction="#loginView" prefHeight="34.0" prefWidth="266.0" styleClass="btn-warning" stylesheets="@../application/application.css" text="Login here" textFill="#901010" textOverrun="CLIP" />
+   </children>
+</AnchorPane>

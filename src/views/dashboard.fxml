@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="784.0" prefWidth="966.0" styleClass="main-view-body" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Dashboard">
+	<children>
+		<GridPane layoutY="32.0" prefHeight="175.0" prefWidth="966.0" styleClass="dashboard-grid">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<AnchorPane prefHeight="68.0" prefWidth="295.0" styleClass="success" GridPane.columnIndex="2">
+					<children>
+						<Text layoutX="23.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="Total completed tasks">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Text>
+						<Text fx:id="completedTasksCount" layoutX="12.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="200" textAlignment="CENTER" wrappingWidth="64.0">
+							<font>
+								<Font size="24.0" />
+							</font>
+						</Text>
+						<ImageView fx:id="completedTasksIcon" fitHeight="50.0" fitWidth="87.0" layoutX="215.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+					</children>
+					<GridPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</GridPane.margin>
+				</AnchorPane>
+				<AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="danger" GridPane.columnIndex="1">
+					<children>
+						<Text layoutX="21.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="Total In-Progress tasks">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Text>
+						<Text fx:id="pendingTasksCount" layoutX="9.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="200" textAlignment="CENTER" wrappingWidth="64.0">
+							<font>
+								<Font size="24.0" />
+							</font>
+						</Text>
+						<ImageView fx:id="pendingTasksIcon" fitHeight="50.0" fitWidth="87.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+					</children>
+					<GridPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</GridPane.margin>
+				</AnchorPane>
+				<AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="warning">
+					<children>
+						<Text layoutX="23.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="Total new tasks">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Text>
+						<Text fx:id="newTasksCount" layoutX="12.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="200" textAlignment="CENTER" wrappingWidth="64.0">
+							<font>
+								<Font size="24.0" />
+							</font>
+						</Text>
+						<ImageView fx:id="newTasksIcon" fitHeight="50.0" fitWidth="87.0" layoutX="215.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+					</children>
+					<GridPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</GridPane.margin>
+				</AnchorPane>
+				<AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+					<children>
+						<Text layoutX="22.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="Total tasks">
+							<font>
+								<Font size="16.0" />
+							</font>
+						</Text>
+						<Text fx:id="totalTasksCount" layoutX="12.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-times" text="200" textAlignment="CENTER" wrappingWidth="64.0">
+							<font>
+								<Font size="24.0" />
+							</font>
+						</Text>
+						<ImageView fx:id="totalTasksIcon" fitHeight="50.0" fitWidth="87.0" layoutX="215.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+					</children>
+					<GridPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</GridPane.margin>
+				</AnchorPane>
+			</children>
+		</GridPane>
+		<Separator layoutY="241.0" prefHeight="3.0" prefWidth="966.0" />
+
+		<VBox layoutX="14.0" layoutY="251.0" prefHeight="372.0" prefWidth="939.0" spacing="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="251.0">
+			<Text layoutX="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New task" wrappingWidth="369.20654296875">
+				<font>
+					<Font name="Times New Roman" size="24.0" />
+				</font>
+				<VBox.margin>
+					<Insets bottom="20.0" top="10.0" />
+				</VBox.margin>
+			</Text>
+			<HBox prefHeight="45.0" prefWidth="939.0" spacing="10.0">
+				<!-- Text field for entering task title -->
+				<TextField fx:id="taskNameTextField" prefHeight="35.0" prefWidth="250.0" promptText="Enter Task Title" styleClass="input">
+					<font>
+						<Font name="Times New Roman" size="16.0" />
+					</font>
+				</TextField>
+
+				<!-- Date pickers for selecting start and end dates -->
+				<DatePicker fx:id="taskDatePickerStart" editable="false" prefHeight="35.0" prefWidth="250.0" promptText="Select start date" styleClass="input" />
+				<DatePicker fx:id="taskDatePickerEnd" editable="false" prefHeight="35.0" prefWidth="250.0" promptText="Select end date" styleClass="input" />
+
+				<!-- ComboBox for selecting task priority -->
+				<ComboBox fx:id="priorityComboBox" prefHeight="35.0" prefWidth="150.0" styleClass="font-times">
+					<items>
+						<!-- Priority options -->
+						<FXCollections fx:factory="observableArrayList">
+							<String fx:value="High" />
+							<String fx:value="Medium" />
+							<String fx:value="Low" />
+						</FXCollections>
+					</items>
+					<promptText>Priority</promptText>
+				</ComboBox>
+
+			</HBox>
+			<HBox prefHeight="41.0" prefWidth="939.0" spacing="10.0">
+				<TextField fx:id="taskDescriptionTextField" prefHeight="35.0" prefWidth="250.0" promptText="Enter Task Description" styleClass="input">
+					<font>
+						<Font name="Times New Roman" size="16.0" />
+					</font>
+				</TextField>
+
+
+				<ComboBox fx:id="statusComboBox" prefHeight="35.0" prefWidth="150.0" styleClass="font-times">
+					<items>
+						<!-- Priority options -->
+						<FXCollections fx:factory="observableArrayList">
+							<String fx:value="New" />
+							<String fx:value="In-Progress" />
+							<String fx:value="Completed" />
+						</FXCollections>
+					</items>
+					<promptText>Status</promptText>
+				</ComboBox>
+			</HBox>
+			<HBox prefHeight="27.0" prefWidth="939.0" spacing="10.0">
+				<children>
+					<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reminders" wrappingWidth="297.20654296875">
+						<font>
+							<Font name="Times New Roman" size="24.0" />
+						</font>
+					</Text>
+					<CheckBox fx:id="remindPlatformEmail" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" selected="true" text="Email">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+					<CheckBox fx:id="remindPlatformSMS" disable="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="132.0" text="SMS">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+					<CheckBox fx:id="remindPlatformPN" disable="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="176.0" text="Push notification">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+				</children>
+			</HBox>
+			<HBox prefHeight="35.0" prefWidth="939.0" spacing="10.0">
+				<children>
+					<CheckBox fx:id="reminderOne" mnemonicParsing="false" prefHeight="35.0" prefWidth="411.0" selected="true" text="1st reminder : 1 day before start date">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+					<CheckBox fx:id="reminderTwo" mnemonicParsing="false" prefHeight="35.0" prefWidth="411.0" text="2nd reminder :  Same day -  Start date">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+				</children>
+			</HBox>
+			<HBox prefHeight="35.0" prefWidth="939.0" spacing="10.0">
+				<children>
+					<CheckBox fx:id="reminderThree" mnemonicParsing="false" prefHeight="35.0" prefWidth="411.0" selected="true" text="3rd reminder : Same day - End date">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+					<CheckBox fx:id="reminderFour" mnemonicParsing="false" prefHeight="35.0" prefWidth="411.0" text="4th reminder :  After end date">
+						<font>
+							<Font name="Times New Roman" size="16.0" />
+						</font>
+					</CheckBox>
+				</children>
+			</HBox>
+			<HBox spacing="10.0">
+				<!-- Button to add a new task -->
+				<Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addTask" prefHeight="35.0" prefWidth="177.0" styleClass="btn-success" text="Save and Relax" textAlignment="RIGHT">
+					<HBox.margin>
+						<Insets top="10.0" />
+					</HBox.margin>
+				</Button>
+			</HBox>
+		</VBox>
+		<Separator layoutY="646.0" prefHeight="3.0" prefWidth="966.0" />
+
+	</children>
+</AnchorPane>

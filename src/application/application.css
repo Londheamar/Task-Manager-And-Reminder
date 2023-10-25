@@ -1,0 +1,189 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.body{
+	 -fx-background-color: white;
+}
+
+.left-nav{
+	-fx-border-color: #b8cfd6;
+    -fx-border-width: 0 1 0 0;
+    -fx-font-family: "Times New Roman";
+    -fx-background-color: #e6f5fa;
+    -fx-effect: dropshadow(three-pass-box, #d4f1fa, 10, 0, 5, 0);
+}
+
+.left-nav-header, .left-nav-footer{
+	-fx-background-color: #03161c;
+	-fx-fill: white;
+}
+
+.left-nav-header Text, .left-nav-footer Text{
+	-fx-fill: white;
+}
+
+.main-view-body{
+	-fx-background-color: #f2fcff;
+	 -fx-border-color: #b8cfd6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.font-times {
+    -fx-font-family: "Times New Roman";
+}
+
+.input {
+    -fx-font-size: 16px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #b8cfd6;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-family: "Times New Roman";
+}
+
+
+.highlight-empty-field{
+	-fx-border-color: #fc657e;
+}
+
+.high-priority{
+	-fx-fill: #ff2a21;
+}
+
+.medium-priority{
+	-fx-fill: orange;
+}
+
+.status-new{
+	-fx-fill: #E4A11B;
+}
+
+.status-completed{
+	-fx-fill: #14A44D;
+}
+
+.status-progress{
+	-fx-fill: #DC4C64;
+}
+
+
+.rounded-profile-pic{
+    -fx-background-radius: 50%;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+
+
+.dashboard-grid AnchorPane{
+	-fx-background-color: linear-gradient(to left, #f7572a, #f7844a);
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+	-fx-cursor: hand;
+}
+
+.dashboard-grid AnchorPane:hover{
+	-fx-background-color: linear-gradient(to bottom, #f7844a, #f7572a);
+}
+
+
+.dashboard-grid AnchorPane.success{
+	-fx-background-color: linear-gradient(to left, #0E8340, #14A44D);
+}
+
+.dashboard-grid AnchorPane.success:hover{
+	-fx-background-color: linear-gradient(to left, #14A44D, #0E8340);
+}
+
+.dashboard-grid AnchorPane.danger{
+	-fx-background-color: linear-gradient(to left, #cc213d, #DC4C64);
+}
+
+.dashboard-grid AnchorPane.danger:hover{
+	-fx-background-color: linear-gradient(to left, #DC4C64, #cc213d);
+}
+
+.dashboard-grid AnchorPane.warning{
+	-fx-background-color: linear-gradient(to left, #db9509, #E4A11B);
+}
+
+.dashboard-grid AnchorPane.warning:hover{
+	-fx-background-color: linear-gradient(to left, #E4A11B, #db9509);
+}
+
+
+.dashboard-grid AnchorPane Text{
+	-fx-fill: white;
+}
+
+.taskDetailsView-active{
+	-fx-background-color: #c7dcfc;
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+}
+
+/* Buttons  */
+.button {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+   	-fx-background-radius: 5px;
+   	-fx-font-family: "Times New Roman";
+   	-fx-font-size: 16px;
+}
+
+.btn-success{
+	-fx-background-color: #14A44D;
+}
+
+.btn-danger{
+	-fx-background-color: #DC4C64;
+}
+
+.btn-warning{
+	-fx-background-color: #E4A11B;
+}
+
+.btn-primary {
+    -fx-background-color: #1976D2;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #cc213d;
+}
+
+.btn-warning:hover {
+    -fx-background-color: #db9509;
+}
+
+.btn-success:hover {
+    -fx-background-color: #0E8340;
+} 
+
+.btn-primary:hover {
+    -fx-background-color: #1565C0;
+}
+
+.btn-credit{
+	-fx-background-color: #03161c;
+}
+
+.btn-credit:hover{
+	-fx-background-color: #020c0f;
+}
+
+.left-nav-links{
+	-fx-text-fill: black;
+	-fx-background-color: #d9d5d4;
+}
+
+.left-nav-links:hover{
+	-fx-background-color: #e3e0de;
+}
+
