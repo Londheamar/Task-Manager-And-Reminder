@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 import database.ConnectDb;
+import email.EmailSender;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -191,6 +192,8 @@ public class Dashboard {
 
 					if (rowsAffected > 0) {
 						// Data inserted successfully
+			            EmailSender.sendEmail(userSession.getUserEmail(), "New task - [TaskManagerAndReminder]", "<h4>Dear Amar,</h4><p>New task scheduled.</p>.");
+
 						AlertUtils.showSuccessAlert("Success", "Task added successfully.");
                          clearInputFields();
                          initializeState();

@@ -5,8 +5,10 @@ module TaskManagerAndReminder {
 	requires javafx.base;
 	requires java.base;
 	requires javafx.graphics;
-	
+	requires mail;
+    
 	exports controllers;
+	exports utilities;
 	
 	opens application to javafx.graphics, javafx.fxml;
 	opens controllers to javafx.fxml;
